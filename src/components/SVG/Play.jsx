@@ -9,9 +9,9 @@ const Play = ({ className }) => {
     >
       <g id="Play" data-name="Play">
         <g>
-          <polygon className="cls-1" points="0 36.45 0 0 28.9 18.23 0 36.45" />
-          <rect className="cls-1" x="46.97" width="10.76" height="36.45" />
-          <rect className="cls-1" x="67.93" width="10.76" height="36.45" />
+          <polygon points="0 36.45 0 0 28.9 18.23 0 36.45" />
+          <rect x="46.97" width="10.76" height="36.45" />
+          <rect x="67.93" width="10.76" height="36.45" />
         </g>
       </g>
     </svg>
