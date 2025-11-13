@@ -3,25 +3,11 @@ import WheelCentralButton from "./WheelCentralButton";
 import WheelButtons from "./WheelButtons";
 import WheelMenu from "./WheelMenu";
 import WheelShadow from "./WheelShadow";
-import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useWheelContext } from "../../contexts/WheelContext";
 
 const Wheel = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = useCallback((e) => {
-    e?.stopPropagation();
-    setIsMenuOpen((s) => !s);
-  }, []);
-
-  useEffect(() => {
-    if (!isMenuOpen) return;
-
-    const closeMenu = () => setIsMenuOpen(false);
-    document.addEventListener("click", closeMenu);
-
-    return () => document.removeEventListener("click", closeMenu);
-  }, [isMenuOpen]);
+  const { mode, isMenuOpen, toggleMenu } = useWheelContext();
 
   return (
     <section className="fixed bottom-0 left-0 right-0 flex items-center justify-center">

@@ -1,5 +1,11 @@
 "use client";
-import { createContext, useContext, useCallback, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useCallback,
+  useState,
+  useEffect,
+} from "react";
 
 const WheelContext = createContext({});
 
@@ -15,9 +21,19 @@ export default function WheelProvider({ children }) {
     setMode(newMode);
   }, []);
 
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen((prev) => !prev);
+  const toggleMenu = useCallback((e) => {
+    e?.stopPropagation();
+    setIsMenuOpen((s) => !s);
   }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const closeMenu = () => setIsMenuOpen(false);
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [isMenuOpen]);
 
   return (
     <WheelContext.Provider value={{ mode, isMenuOpen, changeMode, toggleMenu }}>
