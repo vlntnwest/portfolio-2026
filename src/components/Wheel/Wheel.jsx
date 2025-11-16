@@ -109,30 +109,31 @@ const Wheel = () => {
         }}
         transition={shouldReduceMotion ? { duration: 0 } : undefined}
       >
-        {mode === "home" && (
+        {mode === "home" ? (
           <>
             <WheelCentralButton />
             <WheelShadow position={{ x: 0, y: 0 }} />
             <WheelButtons toggleMenu={toggleMenu} />
           </>
+        ) : (
+          <WheelProject
+            style={
+              mode !== "projects"
+                ? {
+                    opacity: 0,
+                    appearance: "none",
+                    pointerEvents: "none",
+                    translateY: "4rem",
+                  }
+                : {
+                    opacity: 1,
+                    appearance: "auto",
+                    pointerEvents: "auto",
+                    translateY: "0rem",
+                  }
+            }
+          />
         )}
-        <WheelProject
-          style={
-            mode !== "projects"
-              ? {
-                  opacity: 0,
-                  appearance: "none",
-                  pointerEvents: "none",
-                  translateY: "4rem",
-                }
-              : {
-                  opacity: 1,
-                  appearance: "auto",
-                  pointerEvents: "auto",
-                  translateY: "0rem",
-                }
-          }
-        />
       </motion.div>
       {mode === "projects" && (
         <IconBtn
