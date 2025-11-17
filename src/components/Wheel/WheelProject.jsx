@@ -9,7 +9,9 @@ const WheelProject = ({ className, style }) => {
     image: "/assets/images/projects/pokey.png",
   };
 
-  const descriptionAfter = project.description.replace(/ /g, "_");
+  const afterStyle = {
+    "--after-content": `'${project.description}'`,
+  };
 
   return (
     <div
@@ -27,7 +29,8 @@ const WheelProject = ({ className, style }) => {
         <div className="overflow-hidden">
           <h2 className="text-white text-sm/4 font-semibold">{project.name}</h2>
           <motion.p
-            className={`relative inline-block text-white text-sm/4 text-nowrap after:content-['${descriptionAfter}'] after:absolute after:bottom-0 after:right-0 after:translate-x-[150%] after:text-sm/4 after:w-full after:h-full after:text-white after:whitespace-pre-line`}
+            className="relative inline-block text-white text-sm/4 text-nowrap after:content-[var(--after-content)] after:absolute after:bottom-0 after:right-0 after:translate-x-[150%] after:text-sm/4 after:w-full after:h-full after:text-white after:whitespace-pre-line"
+            style={afterStyle}
             animate={{ x: ["0%", "-150%"] }}
             transition={{
               duration: 5,
