@@ -29,7 +29,7 @@ const menuVariants = {
 };
 
 const WheelMenu = () => {
-  const { mode, isMenuOpen } = useWheelContext();
+  const { isMenuOpen } = useWheelContext();
   const shouldReduceMotion = useReducedMotion();
   const menuState = (() => {
     return isMenuOpen ? "open" : "closed";

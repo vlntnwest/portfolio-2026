@@ -40,7 +40,10 @@ const IconMenu = ({ children, direction, isOpen }) => {
   };
 
   return (
-    <div className="mx-2 flex items-center justify-center w-14 h-14 relative z-10">
+    <div
+      className="mx-2 flex items-center justify-center w-14 h-14 relative"
+      style={{ zIndex: isOpen ? 10 : 0 }}
+    >
       <motion.div
         className="absolute bottom-0 right-0 flex items-center justify-center background-dark-gradient rounded-full overflow-hidden"
         initial="initial"
