@@ -4,16 +4,9 @@ import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 
 const Header = () => {
-  const { changeMode, mode } = useWheelContext();
+  const { mode } = useWheelContext();
   return (
     <header>
-      <button
-        onClick={() => {
-          mode === "home" ? changeMode("projects") : changeMode("home");
-        }}
-      >
-        Change mode
-      </button>
       <div className="bg-black">{projectsList}</div>
     </header>
   );
