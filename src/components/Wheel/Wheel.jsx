@@ -13,6 +13,7 @@ import menus from "@/lib/menus.json";
 import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 import IconMenuInner from "../ui/buttons/IconMenuInner";
+import useWheelControl from "@/hooks/useWheel";
 
 const wheelVariants = {
   home: {
@@ -49,6 +50,9 @@ const Wheel = () => {
 
   const shouldReduceMotion = useReducedMotion();
 
+  const { wheelRef, position, onMouseMove, reset, onTouchMove, onTouchStart } =
+    useWheelControl();
+
   return (
     <section className="absolute bottom-0 left-0 right-0 flex items-center justify-center mb-4">
       <WheelMenu />
@@ -70,7 +74,16 @@ const Wheel = () => {
           pointerEvents: "auto",
         }}
         transition={shouldReduceMotion ? { duration: 0 } : undefined}
+        ref={wheelRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={reset}
+        onTouchMove={onTouchMove}
+        onTouchEnd={reset}
+        onTouchStart={onTouchStart}
       >
+        {position.x !== 0 && position.y !== 0 && (
+          <WheelShadow position={position} />
+        )}
         <motion.div
           variants={wheelContentVariants}
           initial="hide"
@@ -78,7 +91,6 @@ const Wheel = () => {
           transition={{ duration: 0.3, delay: 0.2 }}
         >
           <WheelCentralButton />
-          <WheelShadow position={{ x: 0, y: 0 }} />
           <WheelButtons toggleMenu={toggleMenu} />
         </motion.div>
         <motion.div
