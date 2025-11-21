@@ -6,6 +6,8 @@ export default function useWheelControl() {
   const prevAngleRef = useRef(null);
   const accRef = useRef(0);
   const wheelAccRef = useRef(0);
+  const dirRef = useRef(0);
+  const lastTouchRef = useRef(false);
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -37,6 +39,7 @@ export default function useWheelControl() {
   const handleMove = useCallback(
     (angle) => {
       if (prevAngleRef.current === null) return 0;
+
       let delta = angle - prevAngleRef.current;
       delta = normalizeDelta(delta);
       accRef.current += delta;
@@ -47,7 +50,7 @@ export default function useWheelControl() {
         accRef.current -= dir * anglePerStep;
       }
       prevAngleRef.current = angle;
-      return step;
+      dirRef.current = step;
     },
     [normalizeDelta]
   );
@@ -63,38 +66,42 @@ export default function useWheelControl() {
     [getAngle]
   );
 
-  const lastTouchRef = useRef(false);
+  const onMouseMove = useCallback(
+    (e) => {
+      if (lastTouchRef.current) return;
+      if (!wheelRef.current) return 0;
+
+      if (prevAngleRef.current === null) {
+        prevAngleRef.current = getAngle(e.clientX, e.clientY);
+      }
+
+      followMouse({
+        clientX: e.clientX,
+        clientY: e.clientY,
+      });
+      handleMove(getAngle(e.clientX, e.clientY));
+    },
+    [followMouse, handleMove, getAngle]
+  );
 
   const onTouchStart = () => {
     lastTouchRef.current = true;
   };
 
-  const onMouseMove = useCallback(
-    (e) => {
-      if (lastTouchRef.current) return; // ignore le mouvement si touch
-      if (!wheelRef.current) return 0;
-
-      if (startAngleRef.current === null)
-        startAngleRef.current = getAngle(e.clientX, e.clientY);
-      if (prevAngleRef.current === null)
-        prevAngleRef.current = startAngleRef.current;
-
-      const angle = followMouse(e);
-      prevAngleRef.current = angle;
-      return handleMove(angle);
-    },
-    [followMouse, handleMove, getAngle]
-  );
-
   const onTouchMove = useCallback(
     (e) => {
       if (!wheelRef.current) return;
       const touch = e.touches[0];
-      const angle = followMouse({
+
+      if (prevAngleRef.current === null) {
+        prevAngleRef.current = getAngle(touch.clientX, touch.clientY);
+      }
+
+      followMouse({
         clientX: touch.clientX,
         clientY: touch.clientY,
       });
-      prevAngleRef.current = angle;
+      handleMove(getAngle(touch.clientX, touch.clientY));
     },
     [followMouse]
   );
@@ -118,6 +125,7 @@ export default function useWheelControl() {
   return {
     wheelRef,
     position,
+    dirRef,
     reset,
     onMouseMove,
     onTouchMove,

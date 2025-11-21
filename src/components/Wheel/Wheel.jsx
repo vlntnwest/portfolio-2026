@@ -14,6 +14,7 @@ import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 import IconMenuInner from "../ui/buttons/IconMenuInner";
 import useWheelControl from "@/hooks/useWheel";
+import { useEffect } from "react";
 
 const wheelVariants = {
   home: {
@@ -50,8 +51,15 @@ const Wheel = () => {
 
   const shouldReduceMotion = useReducedMotion();
 
-  const { wheelRef, position, onMouseMove, reset, onTouchMove, onTouchStart } =
-    useWheelControl();
+  const {
+    wheelRef,
+    position,
+    dirRef,
+    onMouseMove,
+    reset,
+    onTouchMove,
+    onTouchStart,
+  } = useWheelControl();
 
   return (
     <section className="absolute bottom-0 left-0 right-0 flex items-center justify-center mb-4">
