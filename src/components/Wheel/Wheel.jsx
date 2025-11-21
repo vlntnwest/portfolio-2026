@@ -10,6 +10,7 @@ import IconMenu from "../ui/buttons/IconMenu";
 import Albums from "../SVG/Albums";
 import MenuIcon from "../SVG/MenuIcon";
 import menus from "@/lib/menus.json";
+import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 import IconMenuInner from "../ui/buttons/IconMenuInner";
 
@@ -53,7 +54,7 @@ const Wheel = () => {
       <WheelMenu />
       {mode === "projects" && (
         <IconMenu direction="right" name="projects">
-          <IconMenuInner name="projects" icon={albumIcon} menu={menu} />
+          <IconMenuInner name="projects" icon={albumIcon} menu={projectsList} />
         </IconMenu>
       )}
 
@@ -107,7 +108,7 @@ const Wheel = () => {
       </motion.div>
       {mode === "projects" && (
         <IconMenu direction="left" name="menu">
-          <IconMenuInner name="menu" icon={menuIcon} menu={menu} />
+          <IconMenuInner name="menu" icon={menuIcon} menu={menuList} />
         </IconMenu>
       )}
     </section>
@@ -130,11 +131,14 @@ const albumIcon = (
   />
 );
 
-const menu = menus.map((menu) => (
+const projectsList = projects.map((project) => (
   <MenuLink
-    key={menu.id}
-    name={menu.label}
-    href={menu.href}
-    onClick={(e) => toggleProjectMenu("menu", e)}
+    key={project.id}
+    name={project.label}
+    href={`/projects/${project.href}`}
   />
+));
+
+const menuList = menus.map((menu) => (
+  <MenuLink key={menu.id} name={menu.label} href={menu.href} />
 ));

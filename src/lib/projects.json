@@ -1,11 +1,11 @@
 [
-  { "id": 1, "label": "Pokey Bar", "href": "/pokey-bar" },
+  { "id": 1, "label": "Pokey Bar", "href": "pokey-bar" },
   {
     "id": 2,
     "label": "Cabinet dentaire de la Paix",
-    "href": "/cabinet-dentaire-de-la-paix"
+    "href": "cabinet-dentaire-de-la-paix"
   },
-  { "id": 3, "label": "Inari Strasbourg", "href": "/inari" },
-  { "id": 4, "label": "22point5", "href": "/22point5" },
-  { "id": 5, "label": "BCI Construction", "href": "/bci-construction" }
+  { "id": 3, "label": "Inari Strasbourg", "href": "inari" },
+  { "id": 4, "label": "22point5", "href": "22point5" },
+  { "id": 5, "label": "BCI Construction", "href": "bci-construction" }
 ]

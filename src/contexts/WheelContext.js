@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import {
   createContext,
   useContext,
@@ -21,6 +22,23 @@ export default function WheelProvider({ children }) {
     projects: false,
     menu: false,
   });
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname.includes("/projects/")) {
+      setMode("projects");
+    } else {
+      setMode("home");
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    setIconStates({
+      projects: false,
+      menu: false,
+    });
+  }, [pathname]);
 
   const changeMode = useCallback((newMode) => {
     setMode(newMode);
