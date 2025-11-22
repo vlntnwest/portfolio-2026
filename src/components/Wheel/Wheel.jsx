@@ -18,11 +18,13 @@ import { useCarouselContext } from "@/contexts/CarouselContext";
 import { useEffect } from "react";
 
 const wheelVariants = {
+  initial: { opacity: 0 },
   home: {
     width: "200px",
     height: "200px",
     borderRadius: "9999px",
-    scale: 1,
+
+    opacity: 1,
     translateY: "0px",
     transition: { duration: 0.4, ease: "easeInOut" },
   },
@@ -31,6 +33,7 @@ const wheelVariants = {
     height: "auto",
     transition: { duration: 0.4, ease: "easeInOut" },
     display: "block",
+    opacity: 1,
   },
 };
 
@@ -86,7 +89,7 @@ const Wheel = () => {
       <motion.div
         className="relative background-dark-gradient flex items-center justify-center overflow-hidden select-none touch-none z-10"
         variants={wheelVariants}
-        initial="home"
+        initial="initial"
         animate={mode}
         style={{
           width: "200px",
