@@ -6,7 +6,7 @@ export default function useWheelControl() {
   const prevAngleRef = useRef(null);
   const accRef = useRef(0);
   const wheelAccRef = useRef(0);
-  const dirRef = useRef(0);
+  const [dir, setDir] = useState(0);
   const lastTouchRef = useRef(false);
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -50,9 +50,9 @@ export default function useWheelControl() {
         accRef.current -= dir * anglePerStep;
       }
       prevAngleRef.current = angle;
-      dirRef.current = step;
+      setDir(step);
     },
-    [normalizeDelta]
+    [normalizeDelta, setDir]
   );
 
   const followMouse = useCallback(
@@ -115,18 +115,19 @@ export default function useWheelControl() {
       step += dir;
       wheelAccRef.current -= dir * wheelStep;
     }
-    dirRef.current = step;
+    setDir(step);
   }, []);
 
   useEffect(() => {
     window.addEventListener("wheel", onWheel, { passive: false });
+
     return () => window.removeEventListener("wheel", onWheel);
   }, [onWheel]);
 
   return {
     wheelRef,
     position,
-    dirRef,
+    dir,
     reset,
     onMouseMove,
     onTouchMove,

@@ -2,9 +2,12 @@ import Play from "@/components/SVG/Play";
 import Nav from "../SVG/Nav";
 import { motion } from "framer-motion";
 import { useWheelContext } from "../../contexts/WheelContext";
+import { useCarouselContext } from "@/contexts/CarouselContext";
 
 const WheelButtons = () => {
   const { toggleMenu } = useWheelContext();
+  const { emblaApi } = useCarouselContext();
+
   return (
     <>
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between items-center pointer-events-none">
@@ -26,7 +29,11 @@ const WheelButtons = () => {
         </button>
       </div>
       <div className="absolute top-0 left-0 w-full h-full flex justify-between items-center pointer-events-none">
-        <button className="ml-2 cursor-pointer pointer-events-auto">
+        <button
+          className="ml-2 cursor-pointer pointer-events-auto z-10"
+          onClick={() => emblaApi?.scrollPrev()}
+          disabled={!emblaApi}
+        >
           <div className="p-1 h-5">
             <Nav
               name="Prev"
@@ -34,7 +41,13 @@ const WheelButtons = () => {
             />
           </div>
         </button>
-        <button className="mr-2 cursor-pointer pointer-events-auto">
+        <button
+          className="mr-2 cursor-pointer pointer-events-auto z-10"
+          onClick={() => {
+            emblaApi?.scrollNext();
+          }}
+          disabled={!emblaApi}
+        >
           <div className="p-1 h-5">
             <Nav
               name="Next"

@@ -1,20 +1,12 @@
-"use client";
-import { useWheelContext } from "../../contexts/WheelContext";
 import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 
 const Header = () => {
-  const { changeMode, mode } = useWheelContext();
   return (
     <header>
-      <button
-        onClick={() => {
-          mode === "home" ? changeMode("projects") : changeMode("home");
-        }}
-      >
-        Change mode
-      </button>
-      <div className="bg-black">{projectsList}</div>
+      <div className="bg-black absolute top-0 left-0 right-0">
+        {projectsList}
+      </div>
     </header>
   );
 };

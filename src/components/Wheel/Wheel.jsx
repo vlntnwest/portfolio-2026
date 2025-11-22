@@ -14,14 +14,17 @@ import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 import IconMenuInner from "../ui/buttons/IconMenuInner";
 import useWheelControl from "@/hooks/useWheel";
+import { useCarouselContext } from "@/contexts/CarouselContext";
 import { useEffect } from "react";
 
 const wheelVariants = {
+  initial: { opacity: 0 },
   home: {
     width: "200px",
     height: "200px",
     borderRadius: "9999px",
-    scale: 1,
+
+    opacity: 1,
     translateY: "0px",
     transition: { duration: 0.4, ease: "easeInOut" },
   },
@@ -30,6 +33,7 @@ const wheelVariants = {
     height: "auto",
     transition: { duration: 0.4, ease: "easeInOut" },
     display: "block",
+    opacity: 1,
   },
 };
 
@@ -51,8 +55,27 @@ const Wheel = () => {
 
   const shouldReduceMotion = useReducedMotion();
 
-  const { wheelRef, position, onMouseMove, reset, onTouchMove, onTouchStart } =
-    useWheelControl();
+  const {
+    wheelRef,
+    position,
+    onMouseMove,
+    reset,
+    onTouchMove,
+    onTouchStart,
+    dir,
+  } = useWheelControl();
+
+  const { emblaApi } = useCarouselContext();
+
+  useEffect(() => {
+    if (!emblaApi || dir === undefined) return;
+    if (dir === 0) return;
+    if (dir >= 1) {
+      emblaApi.scrollNext();
+    } else if (dir <= -1) {
+      emblaApi.scrollPrev();
+    }
+  }, [emblaApi, dir]);
 
   return (
     <section className="absolute bottom-0 left-0 right-0 flex items-center justify-center mb-4">
@@ -66,7 +89,7 @@ const Wheel = () => {
       <motion.div
         className="relative background-dark-gradient flex items-center justify-center overflow-hidden select-none touch-none z-10"
         variants={wheelVariants}
-        initial="home"
+        initial="initial"
         animate={mode}
         style={{
           width: "200px",

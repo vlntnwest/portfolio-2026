@@ -10,10 +10,6 @@ const IconMenu = ({ children, direction, name }) => {
   const isOpen = iconStates[name];
 
   useEffect(() => {
-    console.log("state", btnState);
-  }, [btnState]);
-
-  useEffect(() => {
     if (isOpen) {
       setBtnState("open");
       return;
