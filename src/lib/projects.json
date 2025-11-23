@@ -1,12 +1,35 @@
 [
-  { "id": 1, "label": "Pokey Bar", "href": "pokey-bar", "cover": "pokey" },
+  {
+    "id": 1,
+    "label": "Pokey Bar",
+    "href": "pokey-bar",
+    "cover": "pokey",
+    "tag": "Web - Branding"
+  },
   {
     "id": 2,
     "label": "Cabinet dentaire de la Paix",
     "href": "cabinet-dentaire-de-la-paix",
-    "cover": "paix"
+    "cover": "paix",
+    "tag": "Web - Branding"
   },
-  { "id": 3, "label": "Inari Strasbourg", "href": "inari", "cover": "inari" },
-  { "id": 4, "label": "22point5", "href": "22point5" },
-  { "id": 5, "label": "BCI Construction", "href": "bci" }
+  {
+    "id": 3,
+    "label": "Inari Strasbourg",
+    "href": "inari",
+    "cover": "inari",
+    "tag": "E-commerce"
+  },
+  {
+    "id": 4,
+    "label": "22point5",
+    "href": "22point5",
+    "tag": "Web development"
+  },
+  {
+    "id": 5,
+    "label": "BCI Construction",
+    "href": "bci",
+    "tag": "Web development"
+  }
 ]

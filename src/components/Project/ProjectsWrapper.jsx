@@ -2,6 +2,7 @@
 import projects from "@/lib/projects.json";
 import ProjectItem from "./ProjectItem";
 import { useCarouselContext } from "@/contexts/CarouselContext";
+import ProjectsDesc from "./ProjectsDesc";
 
 const ProjectsWrapper = () => {
   const { emblaRef, projectGap, changeOnClick, selectedIndex } =
@@ -28,6 +29,7 @@ const ProjectsWrapper = () => {
           ref={emblaRef}
         >
           <ul className="embla__container flex">{projectList()}</ul>
+          <ProjectsDesc project={projects[selectedIndex]} />
         </div>
       )}
     </>
