@@ -1,12 +1,14 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 import {
   createContext,
   useContext,
   useCallback,
   useState,
   useEffect,
+  useMemo,
 } from "react";
+import projects from "@/lib/projects.json";
 
 const WheelContext = createContext({});
 
@@ -24,6 +26,26 @@ export default function WheelProvider({ children }) {
   });
 
   const pathname = usePathname();
+  const params = useParams();
+  const { name } = params || {};
+
+  const { currentProject, prevProject, nextProject } = useMemo(() => {
+    if (!name)
+      return { currentProject: null, prevProject: null, nextProject: null };
+
+    const currentIndex = projects.findIndex((p) => p.href === name);
+    if (currentIndex === -1)
+      return { currentProject: null, prevProject: null, nextProject: null };
+
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : projects.length - 1;
+    const nextIndex = currentIndex < projects.length - 1 ? currentIndex + 1 : 0;
+
+    return {
+      currentProject: projects[currentIndex],
+      prevProject: projects[prevIndex],
+      nextProject: projects[nextIndex],
+    };
+  }, [name]);
 
   useEffect(() => {
     if (pathname.includes("/projects/")) {
@@ -85,11 +107,15 @@ export default function WheelProvider({ children }) {
     <WheelContext.Provider
       value={{
         mode,
-        isMenuOpen,
         changeMode,
+        isMenuOpen,
         toggleMenu,
         toggleProjectMenu,
         iconStates,
+        setIconStates,
+        currentProject,
+        prevProject,
+        nextProject,
       }}
     >
       {children}
