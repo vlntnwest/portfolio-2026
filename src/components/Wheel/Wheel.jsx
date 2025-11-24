@@ -51,7 +51,8 @@ const wheelContentVariants = {
 };
 
 const Wheel = () => {
-  const { mode, toggleMenu } = useWheelContext();
+  const { mode, toggleMenu, prevProject, nextProject } = useWheelContext();
+  const { selectedIndex } = useCarouselContext();
 
   const shouldReduceMotion = useReducedMotion();
 
@@ -66,6 +67,9 @@ const Wheel = () => {
   } = useWheelControl();
 
   const { emblaApi } = useCarouselContext();
+
+  const prevHref = prevProject ? prevProject.href : "";
+  const nextHref = nextProject ? nextProject.href : "";
 
   useEffect(() => {
     if (!emblaApi || dir === undefined) return;
@@ -105,7 +109,7 @@ const Wheel = () => {
         onTouchEnd={reset}
         onTouchStart={onTouchStart}
       >
-        {position.x !== 0 && position.y !== 0 && (
+        {mode === "home" && position.x !== 0 && position.y !== 0 && (
           <WheelShadow position={position} />
         )}
         <motion.div
@@ -114,8 +118,11 @@ const Wheel = () => {
           animate={mode === "home" ? "show" : "hide"}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
-          <WheelCentralButton />
-          <WheelButtons toggleMenu={toggleMenu} />
+          <WheelCentralButton project={projects[selectedIndex]} />
+          <WheelButtons
+            toggleMenu={toggleMenu}
+            project={projects[selectedIndex]}
+          />
         </motion.div>
         <motion.div
           variants={wheelContentVariants}
@@ -139,6 +146,8 @@ const Wheel = () => {
                     translateY: "0rem",
                   }
             }
+            prevHref={prevHref}
+            nextHref={nextHref}
           />
         </motion.div>
       </motion.div>
@@ -172,6 +181,8 @@ const projectsList = projects.map((project) => (
     key={project.id}
     name={project.label}
     href={`/projects/${project.href}`}
+    cover={project.cover}
+    icon={true}
   />
 ));
 

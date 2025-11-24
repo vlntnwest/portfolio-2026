@@ -18,6 +18,7 @@ const menuVariants = {
 
 const IconMenuInner = ({ name, icon, menu }) => {
   const { toggleProjectMenu, iconStates } = useWheelContext();
+  console.log(menu);
 
   return (
     <>
@@ -31,7 +32,7 @@ const IconMenuInner = ({ name, icon, menu }) => {
         <div className={`p-4`}>{icon}</div>
       </motion.button>
       <motion.ul
-        className="flex flex-col justify-center p-4"
+        className="p-6 w-[85vw] max-w-[300px] max-h-[328px] overflow-y-auto"
         variants={menuVariants}
         initial="hide"
         animate={iconStates[name] ? "show" : "hide"}

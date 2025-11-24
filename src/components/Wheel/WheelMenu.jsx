@@ -20,12 +20,6 @@ const menuVariants = {
     pointerEvents: "auto",
     transition: { type: "spring", stiffness: 140, damping: 14 },
   },
-  hidden: {
-    height: 0,
-    opacity: 0,
-    pointerEvents: "none",
-    transition: { duration: 0.12 },
-  },
 };
 
 const WheelMenu = () => {
@@ -36,7 +30,10 @@ const WheelMenu = () => {
   })();
 
   return (
-    <div className="absolute left-1/2 -top-16 pointer-events-none">
+    <div
+      className="absolute left-1/2 -top-16 -translate-x-1/2"
+      style={{ pointerEvents: isMenuOpen ? "auto" : "none", zIndex: 60 }}
+    >
       <div className="-translate-x-1/2 absolute top-0 left-0 mb-2 pointer-events-auto">
         <motion.div
           className="background-dark-gradient rounded-full w-[3rem] h-8 relative z-10"
@@ -52,17 +49,20 @@ const WheelMenu = () => {
           <div className="w-full px-4 flex justify-center items-center gap-10 text-white text-center flex gap-10 font-medium text-sm/6 appearance-none py-4">
             <Link
               href="/"
-              className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition"
+              className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition pointer-events-auto"
             >
               Home
             </Link>
             <Link
               href="/playground"
-              className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition"
+              className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition pointer-events-auto"
             >
               Playground
             </Link>
-            <Link href="/contact" className="text-wheel-buttons-color">
+            <Link
+              href="/contact"
+              className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition pointer-events-auto"
+            >
               Contact
             </Link>
           </div>

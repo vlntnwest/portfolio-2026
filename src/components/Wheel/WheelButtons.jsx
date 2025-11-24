@@ -3,8 +3,9 @@ import Nav from "../SVG/Nav";
 import { motion } from "framer-motion";
 import { useWheelContext } from "../../contexts/WheelContext";
 import { useCarouselContext } from "@/contexts/CarouselContext";
+import Link from "next/link";
 
-const WheelButtons = () => {
+const WheelButtons = ({ project }) => {
   const { toggleMenu } = useWheelContext();
   const { emblaApi } = useCarouselContext();
 
@@ -22,11 +23,14 @@ const WheelButtons = () => {
             </span>
           </div>
         </motion.button>
-        <button className="mb-2 cursor-pointer pointer-events-auto">
+        <Link
+          href={`/projects/${project.href}`}
+          className="mb-2 cursor-pointer pointer-events-auto"
+        >
           <div className="p-1 h-5">
             <Play className="h-full fill-wheel-buttons-color hover:fill-wheel-buttons-hover-color transition" />
           </div>
-        </button>
+        </Link>
       </div>
       <div className="absolute top-0 left-0 w-full h-full flex justify-between items-center pointer-events-none">
         <button
