@@ -38,7 +38,7 @@ const WheelMenu = () => {
         <motion.div
           className="background-dark-gradient rounded-full w-[3rem] h-8 relative z-10"
           variants={menuVariants}
-          initial={menuState}
+          initial="closed"
           animate={menuState}
           transition={shouldReduceMotion ? { duration: 0 } : undefined}
           style={{
