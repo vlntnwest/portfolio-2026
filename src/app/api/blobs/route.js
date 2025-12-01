@@ -9,8 +9,7 @@ export async function GET(req) {
       prefix,
       token,
     });
-    const imageUrls = blobs.map((blob) => blob.url);
-    return new Response(JSON.stringify({ images: imageUrls }), {
+    return new Response(JSON.stringify({ blobs }), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {

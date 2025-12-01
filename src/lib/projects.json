@@ -4,7 +4,27 @@
     "label": "Pokey Bar",
     "href": "pokey-bar",
     "cover": "pokey-cover",
-    "tag": "Web - Branding"
+    "tag": "Web - Branding",
+    "images": [
+      {
+        "url": "Pokey_Front.webp",
+        "alt": "Pokey Front",
+        "width": 3000,
+        "height": 2500
+      },
+      {
+        "url": "Pokey_Iphone_Mockup.webp",
+        "alt": "Pokey Iphone Mockup",
+        "width": 3000,
+        "height": 2500
+      },
+      {
+        "url": "Pokey_Desktop_Mockup.webp",
+        "alt": "Pokey Desktop Mockup",
+        "width": 3000,
+        "height": 2500
+      }
+    ]
   },
   {
     "id": 2,
