@@ -29,6 +29,36 @@
         "alt": "Pokey Menu Front",
         "width": 3000,
         "height": 2500
+      },
+      {
+        "url": "Pokey_Bags.webp",
+        "alt": "Pokey Bags",
+        "width": 3000,
+        "height": 2500
+      },
+      {
+        "url": "Pokey_Fidelity_Card.webp",
+        "alt": "Pokey Fidelity Card",
+        "width": 3000,
+        "height": 2500
+      },
+      {
+        "url": "Pokey_Menu_2.webp",
+        "alt": "Pokey Menu 2",
+        "width": 3000,
+        "height": 2500
+      },
+      {
+        "url": "Pokey_Sign.webp",
+        "alt": "Pokey Sign",
+        "width": 3000,
+        "height": 2500
+      },
+      {
+        "url": "Pokey_ToteBag.webp",
+        "alt": "Pokey Tote Bag",
+        "width": 3000,
+        "height": 2500
       }
     ]
   },
