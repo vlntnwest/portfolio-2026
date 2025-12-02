@@ -13,7 +13,6 @@ import menus from "@/lib/menus.json";
 import projects from "@/lib/projects.json";
 import MenuLink from "../ui/buttons/MenuLink";
 import IconMenuInner from "../ui/buttons/IconMenuInner";
-import useWheelControl from "@/hooks/useWheel";
 import { useCarouselContext } from "@/contexts/CarouselContext";
 import { useEffect } from "react";
 
@@ -51,12 +50,11 @@ const wheelContentVariants = {
 };
 
 const Wheel = () => {
-  const { mode, toggleMenu, prevProject, nextProject } = useWheelContext();
-  const { selectedIndex } = useCarouselContext();
-
-  const shouldReduceMotion = useReducedMotion();
-
   const {
+    mode,
+    toggleMenu,
+    prevProject,
+    nextProject,
     wheelRef,
     position,
     onMouseMove,
@@ -64,7 +62,10 @@ const Wheel = () => {
     onTouchMove,
     onTouchStart,
     dir,
-  } = useWheelControl();
+  } = useWheelContext();
+  const { selectedIndex } = useCarouselContext();
+
+  const shouldReduceMotion = useReducedMotion();
 
   const { emblaApi } = useCarouselContext();
 

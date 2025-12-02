@@ -2,10 +2,20 @@
 import Image from "next/image";
 import { useInfiniteClone } from "@/hooks/useInfiniteClone";
 import { useRef } from "react";
+import { useEffect } from "react";
+import { useWheelContext } from "@/contexts/WheelContext";
 
 const page = () => {
   const containerRef = useRef(null);
+
   useInfiniteClone(containerRef, 200);
+
+  const { dir } = useWheelContext();
+
+  useEffect(() => {
+    console.log(dir);
+  }, [dir]);
+
   return (
     <div>
       <div className="flex flex-wrap" ref={containerRef}>
