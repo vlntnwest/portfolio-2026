@@ -17,12 +17,11 @@ import { useCarouselContext } from "@/contexts/CarouselContext";
 import { useEffect } from "react";
 
 const wheelVariants = {
-  initial: { opacity: 0 },
+  initial: { opacity: 0, transition: { duration: 0 } },
   home: {
     width: "200px",
     height: "200px",
     borderRadius: "9999px",
-
     opacity: 1,
     translateY: "0px",
     transition: { duration: 0.4, ease: "easeInOut" },

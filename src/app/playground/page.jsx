@@ -26,6 +26,10 @@ const Page = () => {
 
     if (dir === 0) return;
     if (dir >= 1) {
+      if (isActive < 0) {
+        setIsActive(0);
+        return;
+      }
       setIsActive((prev) => prev + 1);
     } else if (dir <= -1) {
       setIsActive((prev) => prev - 1);
