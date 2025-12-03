@@ -37,7 +37,7 @@ export default function WheelProvider({ children }) {
 
   const anglePerStep = Math.PI / 3;
   const wheelStep = 1;
-  const wheelSensitivity = 0.5;
+  const wheelSensitivity = 0.005;
 
   const getAngle = useCallback((clientX, clientY) => {
     if (!wheelRef.current) return 0;
@@ -146,6 +146,11 @@ export default function WheelProvider({ children }) {
     setDir(step);
   }, []);
 
+  const handleDirection = useCallback((delta) => {
+    setDir(delta);
+    setTimeout(() => setDir(0), 50);
+  }, []);
+
   const pathname = usePathname();
   const params = useParams();
   const { name } = params || {};
@@ -171,8 +176,8 @@ export default function WheelProvider({ children }) {
   useEffect(() => {
     if (pathname.includes("/projects/")) {
       setMode("projects");
-    } else if (pathname.includes("/playground")) {
-      setMode("initial");
+      // } else if (pathname.includes("/playground")) {
+      //   setMode("initial");
     } else {
       setMode("home");
     }
@@ -247,6 +252,7 @@ export default function WheelProvider({ children }) {
         wheelRef,
         position,
         dir,
+        handleDirection,
         reset,
         onMouseMove,
         onTouchMove,

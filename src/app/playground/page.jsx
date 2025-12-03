@@ -36,10 +36,23 @@ const Page = () => {
     }
   }, [dir]);
 
+  useEffect(() => {
+    if (isActive < 0 || isActive >= items.length) return;
+
+    const element = document.querySelector(`[data-index='${isActive}']`);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
+  }, [isActive, items]);
+
   return (
     <>
       <Header />
-      <div className="overflow-y-scroll">
+      <div className="">
         {showModal && (
           <div
             className="fixed top-0 left-0 w-screen h-screen bg-white z-999999"
@@ -63,6 +76,7 @@ const Page = () => {
             <div
               className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4"
               key={index}
+              data-index={index}
               onClick={() => handleClick(`${baseBlobUrl}/${item.src}`)}
             >
               <div className="aspect-square">
@@ -94,5 +108,3 @@ const Page = () => {
 };
 
 export default Page;
-
-const Playground = () => {};
