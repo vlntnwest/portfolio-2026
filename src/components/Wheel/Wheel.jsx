@@ -197,7 +197,8 @@ const projectsList = projects.map((project) => (
   <MenuLink
     key={project.id}
     name={project.label}
-    href={`/projects/${project.href}`}
+    href={project?.images ? `/projects/${project.href}` : project.website}
+    target={project?.images ? "_self" : "_blank"}
     cover={project.cover}
     icon={true}
   />

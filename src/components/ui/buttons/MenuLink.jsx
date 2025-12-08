@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const MenuLink = ({ name, href, onClick, cover, icon }) => {
+const MenuLink = ({ name, href, cover, icon, target }) => {
   const baseBlobUrl = process.env.NEXT_PUBLIC_BASE_BLOB_URL;
   return (
     <li className="mb-4 flex gap-2">
@@ -22,7 +22,7 @@ const MenuLink = ({ name, href, onClick, cover, icon }) => {
       <Link
         href={href}
         className="text-white text-lg/6 font-regular hover:text-gray-300 transition-colors block py-2 px-2 truncate whitespace-nowrap"
-        onClick={onClick}
+        target={target}
       >
         {name}
       </Link>
