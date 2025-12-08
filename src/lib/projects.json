@@ -83,6 +83,7 @@
     "id": 4,
     "label": "22point5",
     "href": "22point5",
+    "cover": "22point5-cover",
     "tag": "Web development",
     "website": "https://www.22point5.fr"
   },
@@ -90,6 +91,7 @@
     "id": 5,
     "label": "BCI Construction",
     "href": "bci",
+    "cover": "bci-cover",
     "tag": "Web development",
     "website": "https://www.bci-construction.fr"
   }
