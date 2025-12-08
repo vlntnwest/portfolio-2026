@@ -63,7 +63,7 @@ const ContactBubbles = () => {
           }}
         >
           <div className="flex items-center justify-center">
-            <span className="text-white transition-all duration-400 flex items-center justify-center">
+            <span className="text-white transition-all duration-400 flex items-center justify-center select-none cursor-pointer">
               {open ? (
                 <Link href="mailto:contact@vlntn.fr">contact@vlntn.fr</Link>
               ) : (
@@ -115,7 +115,7 @@ const ContactBubbles = () => {
                 exit={{ opacity: 0 }}
                 className="flex items-center justify-center h-full"
               >
-                <span className="text-white transition-all duration-400 flex items-center justify-center">
+                <span className="text-white transition-all duration-400 flex items-center justify-center pointer-events-auto">
                   <Link href="tel:+33603751457">+33 6 03 75 14 57</Link>
                 </span>
               </motion.div>
@@ -169,7 +169,7 @@ const ContactBubbles = () => {
                     },
                   }}
                   exit={{ opacity: 0, scale: 0.5, x: 72 }}
-                  className="background-dark-gradient rounded-full p-2 relative z-1"
+                  className="background-dark-gradient rounded-full p-2 relative z-1 pointer-events-auto"
                 >
                   <Link
                     href="https://www.linkedin.com/in/valentinwestermeyer/"
@@ -191,7 +191,7 @@ const ContactBubbles = () => {
                     },
                   }}
                   exit={{ opacity: 0, scale: 0.5 }}
-                  className="background-dark-gradient rounded-full p-2 relative z-1"
+                  className="background-dark-gradient rounded-full p-2 relative z-1 pointer-events-auto"
                 >
                   <Link href="https://github.com/vlntnwest" target="_blank">
                     <GithubLogoIcon size={40} color="#fff" />
@@ -212,7 +212,7 @@ const ContactBubbles = () => {
                     },
                   }}
                   exit={{ opacity: 0, scale: 0.5, x: -72 }}
-                  className="background-dark-gradient rounded-full p-2 relative z-1"
+                  className="background-dark-gradient rounded-full p-2 relative z-1 pointer-events-auto"
                 >
                   <Link
                     href="https://www.behance.net/valentiwesterm"
