@@ -264,5 +264,57 @@
         "height": 1920
       }
     ]
+  },
+  {
+    "id": 6,
+    "label": "Immobilière des XV",
+    "href": "immobiliere-des-xv",
+    "cover": "xv-cover",
+    "tag": "Web development",
+    "website": "https://immobilieredesxv.fr/",
+    "images": [
+      {
+        "url": "XV_Home_Desktop.webp",
+        "alt": "Mockup Immobilière des XV - Accueil",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "XV_Product_Desktop_2.webp",
+        "alt": "Mockup Immobilière des XV - Formulaire",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "XV_Product_Desktop.webp",
+        "alt": "Mockup Immobilière des XV - Produit",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "XV_Product_Mobile_2.webp",
+        "alt": "Mockup iPhone Immobilière des XV - Produit détail",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "XV_Product_Mobile.webp",
+        "alt": "Mockup iPhone Immobilière des XV - Produit",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "XV_Products_Desktop.webp",
+        "alt": "Mockup Immobilière des XV - Annonces",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "XV_Sell_Desktop.webp",
+        "alt": "Mockup Immobilière des XV - Page de vente",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
   }
 ]

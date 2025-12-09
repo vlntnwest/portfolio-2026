@@ -60,7 +60,7 @@ const WheelProject = ({ className, style, prevHref, nextHref }) => {
         <Link
           href={`${prevHref}` ?? "/"}
           aria-label={`Projet ${prevProject?.label}`}
-          target={prevProject?.website ? "_blank" : "_self"}
+          target={prevProject?.images ? "_self" : "_blank"}
           className="cursor-pointer z-10 pointer-events-auto active:scale-95"
         >
           <div className="pr-1 h-3">
@@ -73,7 +73,7 @@ const WheelProject = ({ className, style, prevHref, nextHref }) => {
         <Link
           href={`${nextHref}` ?? "/"}
           aria-label={`Projet ${nextProject?.label}`}
-          target={nextProject?.website ? "_blank" : "_self"}
+          target={nextProject?.images ? "_self" : "_blank"}
           className="cursor-pointer z-10 pointer-events-auto active:scale-95"
         >
           <div className="pl-1 h-3">

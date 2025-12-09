@@ -64,7 +64,7 @@ const Wheel = () => {
     dir,
     setProjectLink,
   } = useWheelContext();
-  const { selectedIndex, setSelectedIndex, emblaApi } = useCarouselContext();
+  const { selectedIndex, emblaApi } = useCarouselContext();
   const pathname = usePathname();
 
   const shouldReduceMotion = useReducedMotion();
@@ -87,8 +87,6 @@ const Wheel = () => {
   }, [emblaApi, dir]);
 
   useEffect(() => {
-    console.log("activé");
-
     if (mode === "home") {
       if (!projects[selectedIndex].images) {
         setProjectLink(projects[selectedIndex].website);
