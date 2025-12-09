@@ -8,58 +8,70 @@
     "website": "https://www.pokey-bar.fr",
     "images": [
       {
-        "url": "Pokey_Front.webp",
-        "alt": "Pokey Front",
-        "width": 3000,
-        "height": 2500
+        "url": "Pokey_App_Home.webp",
+        "alt": "Pokey Click & Collect App",
+        "width": 1920,
+        "height": 1080
       },
       {
         "url": "Pokey_Iphone_Mockup.webp",
         "alt": "Pokey Iphone Mockup",
         "width": 3000,
-        "height": 2500
+        "height": 2250
       },
       {
         "url": "Pokey_Desktop_Mockup.webp",
-        "alt": "Pokey Desktop Mockup",
-        "width": 3000,
-        "height": 2500
+        "alt": "Pokey Bureau Mockup",
+        "width": 4000,
+        "height": 3000
       },
       {
         "url": "Pokey_Menu.webp",
-        "alt": "Pokey Menu Front",
+        "alt": "Pokey Menu Intérieur - avant",
         "width": 3000,
-        "height": 2500
+        "height": 2250
       },
       {
         "url": "Pokey_Bags.webp",
-        "alt": "Pokey Bags",
+        "alt": "Pokey Bags - emballages",
         "width": 3000,
-        "height": 2500
+        "height": 2250
       },
       {
         "url": "Pokey_Fidelity_Card.webp",
-        "alt": "Pokey Fidelity Card",
-        "width": 3000,
-        "height": 2500
+        "alt": "Pokey Carte de fidélité",
+        "width": 4000,
+        "height": 3000
       },
       {
         "url": "Pokey_Menu_2.webp",
-        "alt": "Pokey Menu 2",
+        "alt": "Pokey Menu Dos - arrière",
         "width": 3000,
-        "height": 2500
+        "height": 2250
       },
       {
         "url": "Pokey_Sign.webp",
-        "alt": "Pokey Sign",
-        "width": 3000,
-        "height": 2500
+        "alt": "Pokey Stop trottoir",
+        "width": 4000,
+        "height": 3000
       },
       {
-        "url": "Pokey_ToteBag.webp",
-        "alt": "Pokey Tote Bag",
-        "width": 3000,
-        "height": 2500
+        "url": "Pokey_App_Product_Mobile.webp",
+        "alt": "Pokey App Mobile",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Pokey_Menu_iPad.webp",
+        "alt": "Pokey iPad Menu",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Pokey_Front.webp",
+        "alt": "Pokey devanture - extérieur",
+        "width": 4000,
+        "height": 2667
       }
     ]
   },
@@ -69,7 +81,57 @@
     "href": "cabinet-dentaire-de-la-paix",
     "cover": "paix-cover",
     "tag": "Web - Branding",
-    "website": "https://www.cabinetdentairedelapaixstrasbourg.fr"
+    "website": "https://www.cabinetdentairedelapaixstrasbourg.fr",
+    "images": [
+      {
+        "url": "Paix_Home_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Accueil",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "Paix_Home_Mobile.webp",
+        "alt": "Mockup Mobile Cabinet Dentaire de la Paix - Accueil",
+        "width": 1536,
+        "height": 1921
+      },
+      {
+        "url": "Paix_Cab_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Cabinet",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Paix_Blog_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Blog",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Paix_Faq_Mobile.webp",
+        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - FAQ",
+        "width": 1536,
+        "height": 1920
+      },
+      {
+        "url": "Paix_Menu_Mobile.webp",
+        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - Menu",
+        "width": 1372,
+        "height": 1921
+      },
+      {
+        "url": "Paix_Team_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Équipe",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Paix_Treatments_Mobile.webp",
+        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - Traitements",
+        "width": 1920,
+        "height": 1920
+      }
+    ]
   },
   {
     "id": 3,
@@ -77,7 +139,51 @@
     "href": "inari",
     "cover": "inari-cover",
     "tag": "E-commerce",
-    "website": "https://www.inarimod.fr"
+    "website": "https://www.inarimod.fr",
+    "images": [
+      {
+        "url": "Inari_Home_Desktop.webp",
+        "alt": "Mockup Inari - Accueil",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Inari_Home_Mobile.webp",
+        "alt": "Mockup iPhone Inari - Accueil",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Inari_Home_Products_Desktop.webp",
+        "alt": "Mockup Inari - Produits",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "Inari_Menu_Mobile.webp",
+        "alt": "Mockup Inari - Menu",
+        "width": 1280,
+        "height": 1920
+      },
+      {
+        "url": "Inari_Menu_Desktop.webp",
+        "alt": "Mockup Inari - Menu",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Inari_Product_Mobile.webp",
+        "alt": "Mockup iPhone Inari - Produit",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "Inari_Products_Mobile.webp",
+        "alt": "Mockup iPhone Inari - Produits",
+        "width": 1536,
+        "height": 1921
+      }
+    ]
   },
   {
     "id": 4,
@@ -85,7 +191,51 @@
     "href": "22point5",
     "cover": "22point5-cover",
     "tag": "Web development",
-    "website": "https://www.22point5.fr"
+    "website": "https://www.22point5.fr",
+    "images": [
+      {
+        "url": "22point5_Home_Desktop.webp",
+        "alt": "Mockup 22point5 - Accueil",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "22point5_Home_Mobile.webp",
+        "alt": "Mockup iPhone 22point5 - Accueil",
+        "width": 1371,
+        "height": 1920
+      },
+      {
+        "url": "22point5_Projects_Desktop.webp",
+        "alt": "Mockup 22point5 - Projets",
+        "width": 2500,
+        "height": 1667
+      },
+      {
+        "url": "22point5_Project_Desktop.webp",
+        "alt": "Mockup 22point5 - Projet",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "22point5_Project_Mobile_2.webp",
+        "alt": "Mockup iPhone 22point5 - Projet suite",
+        "width": 1372,
+        "height": 1920
+      },
+      {
+        "url": "22point5_Project_Mobile.webp",
+        "alt": "Mockup iPhone 22point5 - Projet",
+        "width": 1536,
+        "height": 1920
+      },
+      {
+        "url": "22point5_Projects_Ipad.webp",
+        "alt": "Mockup iPad 22point5 - Projets",
+        "width": 1920,
+        "height": 1920
+      }
+    ]
   },
   {
     "id": 5,
@@ -93,6 +243,26 @@
     "href": "bci",
     "cover": "bci-cover",
     "tag": "Web development",
-    "website": "https://www.bci-construction.fr"
+    "website": "https://www.bci-construction.fr",
+    "images": [
+      {
+        "url": "Bci_Home_Desktop.webp",
+        "alt": "Mockup BCI Construction - Accueil",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Bci_Home_Mobile_2.webp",
+        "alt": "Mockup iPhone BCI Construction - Accueil",
+        "width": 1371,
+        "height": 1920
+      },
+      {
+        "url": "Bci_Contact_Mobile.webp",
+        "alt": "Mockup iPhone BCI Construction - Contact",
+        "width": 1536,
+        "height": 1920
+      }
+    ]
   }
 ]
