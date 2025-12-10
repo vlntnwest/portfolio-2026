@@ -46,8 +46,6 @@ const IconMenu = ({ children, direction, name }) => {
     open: {
       width: "auto",
       height: "auto",
-      minWidth: "56px",
-      minHeight: "56px",
       transform:
         direction === "left"
           ? "translate(-10px, -10px)"

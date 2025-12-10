@@ -23,10 +23,6 @@ const ContactBubbles = () => {
     <motion.div
       initial={{ height: 56 }}
       animate={open ? "open" : "close"}
-      variants={{
-        open: { minHeight: 200 },
-        close: { minHeight: 56 },
-      }}
       transition={{ duration: 0.05 }}
     >
       <div className="relative flex flex-col items-center justify-center">
