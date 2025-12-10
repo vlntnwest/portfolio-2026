@@ -10,6 +10,7 @@ const ProjectItem = ({
   selectedIndex,
 }) => {
   const baseBlobUrl = process.env.NEXT_PUBLIC_BASE_BLOB_URL;
+
   return (
     <li
       className={`embla__slide min-w-0 flex-[0_0_50%] sm:flex-[0_0_33%] lg:flex-[0_0_25%] aspect-square`}
