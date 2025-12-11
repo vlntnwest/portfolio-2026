@@ -11,6 +11,8 @@
   --wheel-button-hover-color: #58585e;
   --wheel-buttons-color: #d2d2d2;
   --wheel-buttons-hover-color: #fff;
+
+  --header-height: 152px;
 }
 
 @theme inline {

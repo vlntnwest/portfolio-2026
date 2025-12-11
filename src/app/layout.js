@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased touch-none overflow-x-hidden scrollbar-hidden`}
       >
-        <main className="flex flex-col h-screen">
+        <main className="flex flex-col h-auto">
           <Header />
           {children}
         </main>
