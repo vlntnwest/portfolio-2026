@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { useWheelContext } from "@/contexts/WheelContext";
 
 const IconMenu = ({ children, direction, name }) => {

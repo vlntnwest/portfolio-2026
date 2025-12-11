@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ProjectItem = ({
   project,
@@ -12,9 +13,12 @@ const ProjectItem = ({
   const baseBlobUrl = process.env.NEXT_PUBLIC_BASE_BLOB_URL;
 
   return (
-    <li
+    <motion.li
       className={`embla__slide min-w-0 flex-[0_0_50%] sm:flex-[0_0_33%] lg:flex-[0_0_25%] aspect-square`}
       style={{ marginRight: projectGap }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
     >
       <Link
         href={project.images ? `/projects/${project.href}` : project.website}
@@ -41,7 +45,7 @@ const ProjectItem = ({
           loading="eager"
         />
       </Link>
-    </li>
+    </motion.li>
   );
 };
 

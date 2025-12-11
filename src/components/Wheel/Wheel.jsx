@@ -108,7 +108,7 @@ const Wheel = () => {
             type: "spring",
             stiffness: 300,
             damping: 30,
-            delay: 0.35,
+            delay: 0.6,
           },
         }}
         className="flex items-center justify-center"

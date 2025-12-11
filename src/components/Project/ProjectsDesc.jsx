@@ -1,12 +1,24 @@
+import { motion } from "framer-motion";
+
 const ProjectsDesc = ({ project }) => {
   return (
     <div className="text-center mt-4">
-      <h2 className="text-lg/6 md:text-2xl/8 font-medium">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.4 }}
+        className="text-lg/6 md:text-2xl/8 font-medium"
+      >
         {project?.label || "Project Title"}
-      </h2>
-      <p className="text-sm/6 md:text-base/6 text-gray-600">
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }}
+        className="text-sm/6 md:text-base/6 text-gray-600"
+      >
         {project?.tag || "Project Tag"}
-      </p>
+      </motion.p>
     </div>
   );
 };
