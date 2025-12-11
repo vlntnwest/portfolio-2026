@@ -19,7 +19,7 @@ export default function CarouselProvider({ children }) {
     loop: true,
     align: "center",
   });
-  const [projectGap, setProjectGap] = useState(0);
+  const [projectGap, setProjectGap] = useState(48);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const changeOnClick = useCallback(
@@ -43,25 +43,25 @@ export default function CarouselProvider({ children }) {
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
 
-  useEffect(() => {
-    const updateLayout = () => {
-      const screenWidth = window.innerWidth;
+  // useEffect(() => {
+  //   const updateLayout = () => {
+  //     const screenWidth = window.innerWidth;
 
-      const newProjectGap =
-        screenWidth < 640
-          ? (screenWidth - screenWidth / 2) / 4
-          : screenWidth < 1024
-          ? (screenWidth - (2 * screenWidth) / 3) / 2
-          : (screenWidth - (2 * screenWidth) / 4) / 2;
+  //     const newProjectGap =
+  //       screenWidth < 640
+  //         ? (screenWidth - screenWidth / 2) / 4
+  //         : screenWidth < 1024
+  //         ? (screenWidth - (2 * screenWidth) / 3) / 2
+  //         : (screenWidth - (2 * screenWidth) / 4) / 2;
 
-      setProjectGap(newProjectGap);
-    };
+  //     setProjectGap(newProjectGap);
+  //   };
 
-    updateLayout();
-    window.addEventListener("resize", updateLayout);
+  //   updateLayout();
+  //   window.addEventListener("resize", updateLayout);
 
-    return () => window.removeEventListener("resize", updateLayout);
-  }, []);
+  //   return () => window.removeEventListener("resize", updateLayout);
+  // }, []);
 
   useEffect(() => {
     if (!emblaApi) return;

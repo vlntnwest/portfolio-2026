@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 import projects from "@/lib/projects.json";
 import { useRef } from "react";
 import { useInfiniteScroll } from "@/hooks/useInfiniteClone";
-import Header from "@/components/Header/Header";
 
 const page = () => {
   const { name } = useParams();
@@ -16,7 +15,6 @@ const page = () => {
 
   return (
     <>
-      <Header />
       <section className="overflow-y-auto">
         <h1 className="sr-only">{name}</h1>
         <div ref={containerRef}>

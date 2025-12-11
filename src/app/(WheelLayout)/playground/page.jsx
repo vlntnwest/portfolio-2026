@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import projectPlayground from "@/lib/playground.json";
 import { useInfiniteScroll } from "@/hooks/useInfiniteClone";
 import { useWheelContext } from "@/contexts/WheelContext";
-import Header from "@/components/Header/Header";
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false);
@@ -100,7 +99,6 @@ const Page = () => {
 
   return (
     <>
-      <Header />
       <div>
         {showModal && (
           <div

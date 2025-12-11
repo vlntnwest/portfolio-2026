@@ -67,6 +67,8 @@ const Wheel = () => {
   const { selectedIndex, emblaApi } = useCarouselContext();
   const pathname = usePathname();
 
+  const isHome = pathname === "/";
+
   const shouldReduceMotion = useReducedMotion();
 
   const prevHref = prevProject?.images
@@ -99,98 +101,92 @@ const Wheel = () => {
   if (!mode) return null;
 
   return (
-    <section className="fixed bottom-0 left-0 right-0 z-99999 flex items-center justify-center mb-4">
+    <motion.section
+      initial={isHome ? { y: 250 } : { y: 0 }}
+      animate={{
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: 0.6,
+          bounce: 0.1,
+          delay: 2.4,
+        },
+      }}
+      className="fixed bottom-0 left-0 right-0 z-99999 flex items-center justify-center mb-4"
+    >
+      {mode === "projects" && (
+        <IconMenu direction="right" name="projects">
+          <IconMenuInner name="projects" icon={albumIcon} menu={projectsList} />
+        </IconMenu>
+      )}
       <motion.div
-        initial={{ y: 250 }}
-        animate={{
-          y: 0,
-          transition: {
-            type: "spring",
-            stiffness: 300,
-            damping: 30,
-            delay: 0.35,
-          },
+        className="relative background-dark-gradient flex items-center justify-center overflow-hidden select-none touch-none z-10"
+        variants={wheelVariants}
+        initial={mode}
+        animate={mode}
+        style={{
+          width: "200px",
+          height: "200px",
+          borderRadius: "9999px",
+          pointerEvents: "auto",
         }}
-        className="flex items-center justify-center"
+        transition={shouldReduceMotion ? { duration: 0 } : undefined}
+        ref={wheelRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={reset}
+        onTouchMove={onTouchMove}
+        onTouchEnd={reset}
+        onTouchStart={onTouchStart}
       >
-        {mode === "projects" && (
-          <IconMenu direction="right" name="projects">
-            <IconMenuInner
-              name="projects"
-              icon={albumIcon}
-              menu={projectsList}
-            />
-          </IconMenu>
+        {mode === "home" && position.x !== 0 && position.y !== 0 && (
+          <WheelShadow position={position} />
         )}
         <motion.div
-          className="relative background-dark-gradient flex items-center justify-center overflow-hidden select-none touch-none z-10"
-          variants={wheelVariants}
-          initial={mode}
-          animate={mode}
-          style={{
-            width: "200px",
-            height: "200px",
-            borderRadius: "9999px",
-            pointerEvents: "auto",
-          }}
-          transition={shouldReduceMotion ? { duration: 0 } : undefined}
-          ref={wheelRef}
-          onMouseMove={onMouseMove}
-          onMouseLeave={reset}
-          onTouchMove={onTouchMove}
-          onTouchEnd={reset}
-          onTouchStart={onTouchStart}
+          variants={wheelContentVariants}
+          initial={mode === "home" ? "show" : "hide"}
+          animate={mode === "home" ? "show" : "hide"}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
-          {mode === "home" && position.x !== 0 && position.y !== 0 && (
-            <WheelShadow position={position} />
-          )}
-          <motion.div
-            variants={wheelContentVariants}
-            initial={mode === "home" ? "show" : "hide"}
-            animate={mode === "home" ? "show" : "hide"}
-            transition={{ duration: 0.3, delay: 0.2 }}
-          >
-            <WheelCentralButton />
-            <WheelButtons
-              toggleMenu={toggleMenu}
-              project={projects[selectedIndex]}
-            />
-          </motion.div>
-          <motion.div
-            variants={wheelContentVariants}
-            initial="hide"
-            animate={mode === "projects" ? "show" : "hide"}
-            transition={{ duration: 0.3, delay: 0.2 }}
-          >
-            <WheelProject
-              style={
-                mode !== "projects"
-                  ? {
-                      opacity: 0,
-                      appearance: "none",
-                      pointerEvents: "none",
-                      translateY: "4rem",
-                    }
-                  : {
-                      opacity: 1,
-                      appearance: "auto",
-                      pointerEvents: "auto",
-                      translateY: "0rem",
-                    }
-              }
-              prevHref={prevHref}
-              nextHref={nextHref}
-            />
-          </motion.div>
+          <WheelCentralButton />
+          <WheelButtons
+            toggleMenu={toggleMenu}
+            project={projects[selectedIndex]}
+          />
         </motion.div>
-        {mode === "projects" && (
-          <IconMenu direction="left" name="menu">
-            <IconMenuInner name="menu" icon={menuIcon} menu={menuList} />
-          </IconMenu>
-        )}
+        <motion.div
+          variants={wheelContentVariants}
+          initial="hide"
+          animate={mode === "projects" ? "show" : "hide"}
+          transition={{ duration: 0.3, delay: 0.2 }}
+        >
+          <WheelProject
+            style={
+              mode !== "projects"
+                ? {
+                    opacity: 0,
+                    appearance: "none",
+                    pointerEvents: "none",
+                    translateY: "4rem",
+                  }
+                : {
+                    opacity: 1,
+                    appearance: "auto",
+                    pointerEvents: "auto",
+                    translateY: "0rem",
+                  }
+            }
+            prevHref={prevHref}
+            nextHref={nextHref}
+          />
+        </motion.div>
       </motion.div>
+      {mode === "projects" && (
+        <IconMenu direction="left" name="menu">
+          <IconMenuInner name="menu" icon={menuIcon} menu={menuList} />
+        </IconMenu>
+      )}
       <WheelMenu />
-    </section>
+    </motion.section>
   );
 };
 
