@@ -1,9 +1,17 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef, useLayoutEffect } from "react";
+import { InvaderGrey, InvaderBlue, InvaderYellow } from "./InvaderModels";
+
+const INVADER_TYPES = [InvaderBlue, InvaderYellow, InvaderGrey];
 
 const Invader = ({ data, onRemove }) => {
   const ref = useRef();
-  const speed = 25;
+  const speed = 30;
+
+  const RandomModel = useMemo(() => {
+    const randomIndex = Math.floor(Math.random() * INVADER_TYPES.length);
+    return INVADER_TYPES[randomIndex];
+  }, []);
 
   useLayoutEffect(() => {
     if (ref.current) {
@@ -19,16 +27,15 @@ const Invader = ({ data, onRemove }) => {
     ref.current.position.y += data.dir.y * speed * delta;
     ref.current.position.z += data.dir.z * speed * delta;
 
-    if (ref.current.position.z > 2) {
+    if (ref.current.position.z > 3) {
       onRemove();
     }
   });
 
   return (
-    <mesh ref={ref} userData={{ id: data.id, type: "enemy" }}>
-      <boxGeometry args={[1.6, 1.6, 0.2]} />
-      <meshStandardMaterial color="#ff3366" />
-    </mesh>
+    <group ref={ref} userData={{ id: data.id, type: "enemy" }}>
+      <RandomModel scale={0.3} />
+    </group>
   );
 };
 

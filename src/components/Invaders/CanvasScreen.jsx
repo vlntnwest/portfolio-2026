@@ -21,7 +21,7 @@ const CanvasScreen = () => {
       <Canvas>
         <PerspectiveCamera makeDefault position={[0, 1.6, 0]} fov={75} />
         <Starfield speed={40} count={1000} />
-        <ambientLight intensity={0.8} />
+        <ambientLight intensity={3} />
         <directionalLight position={[5, 10, 5]} intensity={1} />
         <InvadersManager single={false} />
       </Canvas>
