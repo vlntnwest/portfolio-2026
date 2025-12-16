@@ -10,23 +10,24 @@ const inter = Inter({
 export const metadata = {
   title: {
     default:
-      "Valentin Westermeyer - Développeur Next.js et React basé à Strasbourg",
+      "Valentin Westermeyer | Développeur Next.js et WordPress à Strasbourg",
     template: "%s | Valentin Westermeyer",
   },
   description:
-    "Portfolio 2025 Valentin Westermeyer, développeur web à Strasbourg",
+    "Portfolio de Valentin Westermeyer, développeur web à Strasbourg, spécialisé WordPress et Next.js. Découvrez mes projets.",
   openGraph: {
-    title: "Valentin Westermeyer | Développeur Next.js à Strasbourg",
+    title:
+      "Valentin Westermeyer | Développeur Next.js et WordPress à Strasbourg",
     description:
       "Portfolio 2025 de Valentin Westermeyer, développeur web à Strasbourg spécialisé en Next.js et React. Création de sites web modernes et performants.",
-    url: "https://valentin-westermeyer.fr",
+    url: "https://www.vlntn.fr",
     siteName: "Valentin Westermeyer - Développeur Web",
     images: [
       {
-        url: "https://valentin-westermeyer.fr/og-image.jpg", // Créez une image spécifique pour le partage (1200x630px idéalement)
+        url: "https://bto1vhg21okdlu4o.public.blob.vercel-storage.com/Banner.png",
         width: 1200,
         height: 630,
-        alt: "Valentin Westermeyer - Portfolio web",
+        alt: "Valentin Westermeyer - Portfolio web - Développeur Next.js et WordPress à Strasbourg",
       },
     ],
     locale: "fr_FR",
