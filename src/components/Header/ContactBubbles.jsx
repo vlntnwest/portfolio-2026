@@ -25,7 +25,7 @@ const ContactBubbles = () => {
       animate={open ? "open" : "close"}
       transition={{ duration: 0.05 }}
     >
-      <div className="relative flex flex-col items-center justify-center">
+      <div className="relative flex flex-col items-center justify-center title-minor text-white">
         <motion.div
           className="relative background-dark-gradient rounded-full px-4 z-2 pointer-events-auto"
           initial="close"
@@ -59,16 +59,16 @@ const ContactBubbles = () => {
           }}
         >
           <div className="flex items-center justify-center">
-            <span className="text-white transition-all duration-400 flex items-center justify-center select-none cursor-pointer">
+            <span className="title-minor transition-all duration-400 select-none cursor-pointer text-sm">
               {open ? (
                 <Link href="mailto:contact@vlntn.fr">contact@vlntn.fr</Link>
               ) : (
-                <>
+                <span className="font-semibold flex">
                   Valentin
                   <div className="py-1 pl-1 h-6 ml-2">
                     <PlayUnique className="h-full fill-wheel-buttons-color hover:fill-wheel-buttons-hover-color transition" />
                   </div>
-                </>
+                </span>
               )}
             </span>
           </div>

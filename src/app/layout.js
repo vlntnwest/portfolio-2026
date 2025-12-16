@@ -1,10 +1,10 @@
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 
-const poppins = Poppins({
+const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${poppins.className} antialiased touch-none overflow-x-hidden scrollbar-hidden`}
+        className={`${inter.className} antialiased touch-none overflow-x-hidden scrollbar-hidden`}
       >
         <main className="flex flex-col h-auto">
           <Header />

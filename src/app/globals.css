@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --medium-gray: #7d7d7d;
   --wheel-size: 200px;
   --dark-gradient: linear-gradient(212deg, #202022 38%, #434349 100%);
   --wheel-button-size: 72px;
@@ -24,6 +25,7 @@
   --color-wheel-button-hover: var(--wheel-button-hover-color);
   --color-wheel-buttons-color: var(--wheel-buttons-color);
   --color-wheel-buttons-hover-color: var(--wheel-buttons-hover-color);
+  --color-medium-gray: var(--medium-gray);
 }
 
 @utility scrollbar-hidden {
@@ -40,4 +42,16 @@ body {
 
 .background-dark-gradient {
   background: var(--dark-gradient);
+}
+
+.project-title {
+  @apply text-lg/6 md:text-2xl/8 font-medium;
+}
+
+.title-minor {
+  @apply text-base/6;
+}
+
+.text-paragraph {
+  @apply text-base/6 font-medium;
 }
