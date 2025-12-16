@@ -1,36 +1,31 @@
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 
 const Invader = ({ data, onRemove }) => {
   const ref = useRef();
-  const speed = 8;
+  const speed = 25;
 
-  // initialise la position à start dès le premier render
-  if (
-    ref.current &&
-    ref.current.position.x === 0 &&
-    ref.current.position.y === 0 &&
-    ref.current.position.z === 0
-  ) {
-    ref.current.position.set(data.start.x, data.start.y, data.start.z);
-  }
+  useLayoutEffect(() => {
+    if (ref.current) {
+      ref.current.position.set(data.start.x, data.start.y, data.start.z);
+      ref.current.lookAt(0, 0, 0);
+    }
+  }, [data]);
 
   useFrame((state, delta) => {
     if (!ref.current) return;
 
-    // déplacement selon la direction et la vitesse
     ref.current.position.x += data.dir.x * speed * delta;
     ref.current.position.y += data.dir.y * speed * delta;
     ref.current.position.z += data.dir.z * speed * delta;
 
-    // suppression : si l’ennemi a atteint ou dépassé la périphérie du cercle (plan z = 0)
-    if (ref.current.position.z >= data.target.z) {
+    if (ref.current.position.z > 2) {
       onRemove();
     }
   });
 
   return (
-    <mesh ref={ref} position={[0, 4, -20]}>
+    <mesh ref={ref} userData={{ id: data.id, type: "enemy" }}>
       <boxGeometry args={[1.6, 1.6, 0.2]} />
       <meshStandardMaterial color="#ff3366" />
     </mesh>

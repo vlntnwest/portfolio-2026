@@ -1,7 +1,5 @@
 import Page404 from "@/components/Page404";
 
-const page = () => {
+export default function NotFound() {
   return <Page404 />;
-};
-
-export default page;
+}

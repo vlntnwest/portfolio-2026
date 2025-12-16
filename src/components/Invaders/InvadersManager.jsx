@@ -2,19 +2,20 @@
 import { useRef, useState } from "react";
 import Invader from "./Invader";
 import { useFrame } from "@react-three/fiber";
+import LasersManager from "./LasersManager";
 
-const InvadersManager = ({ spawnIntervalMs = 1500, single = true }) => {
+const InvadersManager = ({ spawnIntervalMs = 1000, single = true }) => {
   const [invaders, setInvaders] = useState([]);
   const idRef = useRef(0);
   const timerRef = useRef(null);
 
   function makeInvader(radius) {
     const id = idRef.current++;
-    const start = { x: 0, y: 0, z: -300 };
+    const start = { x: 0, y: 0, z: -50 };
     const angle = Math.random() * Math.PI * 2;
     const target = {
       x: Math.cos(angle) * radius,
-      y: Math.sin(angle) * radius,
+      y: Math.abs(Math.sin(angle) * radius),
       z: 10,
     };
     const dx = target.x - start.x;
@@ -36,7 +37,7 @@ const InvadersManager = ({ spawnIntervalMs = 1500, single = true }) => {
       timerRef.current = 0;
       setInvaders((prev) => {
         if (single && prev.length > 0) return prev;
-        const radius = 100;
+        const radius = 10;
         const invader = makeInvader(radius);
         return [...prev, invader];
       });
@@ -47,9 +48,14 @@ const InvadersManager = ({ spawnIntervalMs = 1500, single = true }) => {
     setInvaders((prev) => prev.filter((e) => e.id !== id));
   }
 
-  return invaders.map((e) => (
-    <Invader key={e.id} data={e} onRemove={() => removeInvader(e.id)} />
-  ));
+  return (
+    <>
+      <LasersManager onEnemyHit={removeInvader} />
+      {invaders.map((e) => (
+        <Invader key={e.id} data={e} onRemove={() => removeInvader(e.id)} />
+      ))}
+    </>
+  );
 };
 
 export default InvadersManager;
