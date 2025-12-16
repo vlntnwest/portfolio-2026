@@ -7,7 +7,7 @@ import React from "react";
 const Page404 = () => {
   return (
     <InvadersContext>
-      <section className="relative h-[calc(100vh-var(--header-height))]">
+      <section className="fixed w-screen h-screen cursor-none">
         <CanvasScreen />
         <Link
           href="/"

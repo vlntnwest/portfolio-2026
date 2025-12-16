@@ -5,15 +5,24 @@ import Laser from "./Laser";
 import * as THREE from "three";
 
 const LasersManager = ({ onEnemyHit }) => {
-  const { camera, raycaster, pointer } = useThree();
+  const { camera, raycaster, pointer, size } = useThree();
   const [lasers, setLasers] = useState([]);
 
   const isShootingRef = useRef(false);
+  const isTouchRef = useRef(false);
   const cooldownRef = useRef(0);
-  const FIRE_RATE = 0.15;
+  const FIRE_RATE = 0.1;
 
   const fireLaser = () => {
-    raycaster.setFromCamera(pointer, camera);
+    let rayPointer = pointer.clone();
+
+    if (isTouchRef.current) {
+      const offsetNDC = (100 / size.height) * 2;
+
+      rayPointer.y += offsetNDC;
+    }
+
+    raycaster.setFromCamera(rayPointer, camera);
     const laserDir = raycaster.ray.direction.clone();
 
     const startPos = camera.position
@@ -30,9 +39,11 @@ const LasersManager = ({ onEnemyHit }) => {
   };
 
   useEffect(() => {
-    const handleStart = () => {
+    const handleStart = (e) => {
       isShootingRef.current = true;
+      isTouchRef.current = e.pointerType === "touch";
     };
+
     const handleStop = () => {
       isShootingRef.current = false;
     };

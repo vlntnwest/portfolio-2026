@@ -6,11 +6,12 @@ import * as THREE from "three";
 const Laser = ({ data, onRemove, onEnemyHit }) => {
   const ref = useRef();
   const { scene } = useThree();
-  const speed = 80;
+  const speed = 200;
   const { setKills } = useInvardersContext();
 
   useLayoutEffect(() => {
     if (!ref.current) return;
+
     ref.current.position.set(
       data.position[0],
       data.position[1],
@@ -40,7 +41,7 @@ const Laser = ({ data, onRemove, onEnemyHit }) => {
       if (object.userData && object.userData.type === "enemy") {
         const distance = ref.current.position.distanceTo(object.position);
 
-        if (distance < 0.8) {
+        if (distance < 1) {
           onEnemyHit(object.userData.id);
           onRemove();
           setKills((prev) => prev + 1);

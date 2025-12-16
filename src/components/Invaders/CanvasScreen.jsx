@@ -10,7 +10,7 @@ const CanvasScreen = () => {
 
   return (
     <>
-      <div className="absolute top-0 max-w-7xl left-1/2 -translate-x-1/2 w-full">
+      <div className="absolute top-0 max-w-7xl left-1/2 -translate-x-1/2 w-full mt-[var(--header-height)]">
         <p className="text-xl px-4 max-w-md">
           Vous avez dévié de la trajectoire. Nettoyez le secteur avant de faire
           demi-tour. {kills < 10 ? "0" + kills : kills} invader

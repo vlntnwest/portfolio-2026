@@ -13,7 +13,7 @@ const Pointer = () => {
 
     const handleTouch = (e) => {
       const touch = e.touches[0];
-      if (touch) move(touch.clientX, touch.clientY);
+      if (touch) move(touch.clientX, touch.clientY - 100);
     };
 
     window.addEventListener("mousemove", handleMouse);
@@ -31,7 +31,7 @@ const Pointer = () => {
       style={{
         transform: "translate(-50%, -50%)",
         left: pos.x,
-        top: pos.y - 152,
+        top: pos.y,
       }}
     >
       <div className="relative h-full w-full">
