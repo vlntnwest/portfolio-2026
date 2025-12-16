@@ -9,12 +9,11 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    default:
-      "Valentin Westermeyer - Développeur Next.js et React basé à Strasbourg",
+    default: "Valentin Westermeyer - Développeur Web basé à Strasbourg",
     template: "%s | Valentin Westermeyer",
   },
   description:
-    "Portfolio 2025 Valentin Westermeyer, développeur web à Strasbourg",
+    "Portfolio de Valentin Westermeyer, développeur web à Strasbourg, spécialisé WordPress et Next.js. Découvrez mes projets.",
   openGraph: {
     title: "Valentin Westermeyer | Développeur Next.js à Strasbourg",
     description:

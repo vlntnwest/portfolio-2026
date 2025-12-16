@@ -4,7 +4,10 @@
     "label": "Pokey Bar",
     "href": "pokey-bar",
     "cover": "pokey-cover",
+    "description": "Développement du site vitrine du Pokey Bar sous WordPress et d’une application web de click & collect / click & serve React. Création de l’identité visuelle et du packaging.",
     "tag": "Web - Branding",
+    "technologies": "React et WordPress",
+    "type": "Application web",
     "website": "https://www.pokey-bar.fr",
     "images": [
       {
@@ -80,7 +83,10 @@
     "label": "Cabinet dentaire de la Paix",
     "href": "cabinet-dentaire-de-la-paix",
     "cover": "paix-cover",
+    "description": "Projet de site web pour un cabinet dentaire pluridisciplinaire : conception d’une identité digitale moderne, claire et rassurante, valorisant une approche humaine, des soins de pointe et une prise en charge globale du patient.",
     "tag": "Web - Branding",
+    "technologies": "WordPress",
+    "type": "Site web",
     "website": "https://www.cabinetdentairedelapaixstrasbourg.fr",
     "images": [
       {
@@ -138,7 +144,10 @@
     "label": "Inari Strasbourg",
     "href": "inari",
     "cover": "inari-cover",
+    "description": "Site e-commerce développé sur WordPress avec WooCommerce et un thème sur mesure, pensé pour la performance et l’expérience utilisateur. Design soigné enrichi d’animations fluides avec GSAP et ScrollTrigger, et structure optimisée pour le SEO et la maintenabilité.",
     "tag": "E-commerce",
+    "type": "Site web",
+    "technologies": "WordPress et Woocommerce",
     "website": "https://www.inarimod.fr",
     "images": [
       {
@@ -190,7 +199,10 @@
     "label": "22point5",
     "href": "22point5",
     "cover": "22point5-cover",
-    "tag": "Web development",
+    "description": "Site web du cabinet d'architecture 22point5 à Strasbourg, conçu sous WordPress avec design animé via GSAP/ScrollTrigger, optimisé SEO pour une expérience fluide et responsive.",
+    "tag": "Site web ",
+    "type": "Site web",
+    "technologies": "WordPress",
     "website": "https://www.22point5.fr",
     "images": [
       {
@@ -242,7 +254,10 @@
     "label": "BCI Construction",
     "href": "bci",
     "cover": "bci-cover",
-    "tag": "Web development",
+    "description": "Site web du constructeur BCI à Colmar, conçu sous WordPress avec design animé via GSAP/ScrollTrigger, optimisé SEO pour une expérience fluide et responsive.",
+    "tag": "Site web WordPress",
+    "type": "Site web",
+    "technologies": "WordPress",
     "website": "https://www.bci-construction.fr",
     "images": [
       {
@@ -270,7 +285,10 @@
     "label": "Immobilière des XV",
     "href": "immobiliere-des-xv",
     "cover": "xv-cover",
-    "tag": "Web development",
+    "description": "Site web de l'agence Immobilière des XV à Strasbourg, conçu sous WordPress avec design épuré et responsive, optimisé SEO pour une expérience fluide.",
+    "tag": "Site web WordPress",
+    "type": "Site web",
+    "technologies": "WordPress",
     "website": "https://immobilieredesxv.fr/",
     "images": [
       {

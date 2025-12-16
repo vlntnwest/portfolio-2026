@@ -13,7 +13,7 @@ const WheelProject = ({ className, style, prevHref, nextHref }) => {
 
   return (
     <div
-      className={`px-4 py-2 relative gap-4 flex max-w-[300px] ${className}`}
+      className={`px-4 py-2 relative gap-4 flex max-w-[300px] min-w-[235px] justify-between ${className}`}
       style={style}
     >
       <Link
@@ -33,16 +33,16 @@ const WheelProject = ({ className, style, prevHref, nextHref }) => {
           height={40}
           className="rounded-md max-h-10 object-cover max-w-10 aspect-square"
         />
-        <div className="overflow-hidden max-w-[110px]">
-          <h2 className="text-white text-sm/4 font-semibold text-nowrap">
+        <div className="overflow-hidden w-[90px] sm:w-[110px]">
+          <h2 className="text-white text-sm/4 font-semibold text-nowrap truncate whitespace-nowrap">
             {currentProject?.label}
           </h2>
           <motion.p
-            className="relative inline-block text-white text-sm/4 text-nowrap after:content-[var(--after-content)] after:absolute after:bottom-0 after:right-0 after:translate-x-[150%] after:text-sm/4 after:w-full after:h-full after:text-white after:whitespace-pre-line"
+            className="relative inline-block min-w-full text-white text-sm/4 text-nowrap after:content-[var(--after-content)] after:absolute after:bottom-0 after:right-0 after:translate-x-[110%] after:text-sm/4 after:w-full after:h-full after:text-white after:whitespace-pre-line"
             style={{
               "--after-content": `'${currentProject?.tag || ""}'`,
             }}
-            animate={{ x: ["0%", "-150%"] }}
+            animate={{ x: ["0%", "-110%"] }}
             transition={{
               duration: 5,
               delay: 5,
