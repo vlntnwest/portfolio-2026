@@ -52,7 +52,7 @@ const WheelMenu = () => {
               <Link
                 key={link.id}
                 href={link.href}
-                className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition pointer-events-auto"
+                className="text-wheel-buttons-color hover:text-wheel-buttons-hover-color transition pointer-events-auto "
               >
                 {link.label}
               </Link>
