@@ -1,6 +1,122 @@
 [
   {
     "id": 1,
+    "label": "Inari Strasbourg",
+    "href": "inari",
+    "cover": "inari-cover",
+    "description": "Site e-commerce développé sur WordPress avec WooCommerce et un thème sur mesure, pensé pour la performance et l’expérience utilisateur. Design soigné enrichi d’animations fluides avec GSAP et ScrollTrigger, et structure optimisée pour le SEO et la maintenabilité.",
+    "tag": "E-commerce",
+    "type": "Site web",
+    "technologies": "WordPress et Woocommerce",
+    "website": "https://www.inarimod.fr",
+    "images": [
+      {
+        "url": "Inari_Home_Desktop.webp",
+        "alt": "Mockup Inari - Accueil",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Inari_Home_Mobile.webp",
+        "alt": "Mockup iPhone Inari - Accueil",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Inari_Home_Products_Desktop.webp",
+        "alt": "Mockup Inari - Produits",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "Inari_Menu_Mobile.webp",
+        "alt": "Mockup Inari - Menu",
+        "width": 1280,
+        "height": 1920
+      },
+      {
+        "url": "Inari_Menu_Desktop.webp",
+        "alt": "Mockup Inari - Menu",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Inari_Product_Mobile.webp",
+        "alt": "Mockup iPhone Inari - Produit",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "Inari_Products_Mobile.webp",
+        "alt": "Mockup iPhone Inari - Produits",
+        "width": 1536,
+        "height": 1921
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "label": "Cabinet dentaire de la Paix",
+    "href": "cabinet-dentaire-de-la-paix",
+    "cover": "paix-cover",
+    "description": "Projet de site web pour un cabinet dentaire pluridisciplinaire : conception d’une identité digitale moderne, claire et rassurante, valorisant une approche humaine, des soins de pointe et une prise en charge globale du patient.",
+    "tag": "Web - Branding",
+    "technologies": "WordPress",
+    "type": "Site web",
+    "website": "https://www.cabinetdentairedelapaixstrasbourg.fr",
+    "images": [
+      {
+        "url": "Paix_Home_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Accueil",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "url": "Paix_Home_Mobile.webp",
+        "alt": "Mockup Mobile Cabinet Dentaire de la Paix - Accueil",
+        "width": 1536,
+        "height": 1921
+      },
+      {
+        "url": "Paix_Cab_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Cabinet",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Paix_Blog_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Blog",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "Paix_Faq_Mobile.webp",
+        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - FAQ",
+        "width": 1536,
+        "height": 1920
+      },
+      {
+        "url": "Paix_Menu_Mobile.webp",
+        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - Menu",
+        "width": 1372,
+        "height": 1921
+      },
+      {
+        "url": "Paix_Team_Desktop.webp",
+        "alt": "Mockup Cabinet Dentaire de la Paix - Équipe",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "Paix_Treatments_Mobile.webp",
+        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - Traitements",
+        "width": 1920,
+        "height": 1920
+      }
+    ]
+  },
+  {
+    "id": 3,
     "label": "Pokey Bar",
     "href": "pokey-bar",
     "cover": "pokey-cover",
@@ -75,122 +191,6 @@
         "alt": "Pokey devanture - extérieur",
         "width": 4000,
         "height": 2667
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "label": "Cabinet dentaire de la Paix",
-    "href": "cabinet-dentaire-de-la-paix",
-    "cover": "paix-cover",
-    "description": "Projet de site web pour un cabinet dentaire pluridisciplinaire : conception d’une identité digitale moderne, claire et rassurante, valorisant une approche humaine, des soins de pointe et une prise en charge globale du patient.",
-    "tag": "Web - Branding",
-    "technologies": "WordPress",
-    "type": "Site web",
-    "website": "https://www.cabinetdentairedelapaixstrasbourg.fr",
-    "images": [
-      {
-        "url": "Paix_Home_Desktop.webp",
-        "alt": "Mockup Cabinet Dentaire de la Paix - Accueil",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "url": "Paix_Home_Mobile.webp",
-        "alt": "Mockup Mobile Cabinet Dentaire de la Paix - Accueil",
-        "width": 1536,
-        "height": 1921
-      },
-      {
-        "url": "Paix_Cab_Desktop.webp",
-        "alt": "Mockup Cabinet Dentaire de la Paix - Cabinet",
-        "width": 1920,
-        "height": 1920
-      },
-      {
-        "url": "Paix_Blog_Desktop.webp",
-        "alt": "Mockup Cabinet Dentaire de la Paix - Blog",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "url": "Paix_Faq_Mobile.webp",
-        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - FAQ",
-        "width": 1536,
-        "height": 1920
-      },
-      {
-        "url": "Paix_Menu_Mobile.webp",
-        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - Menu",
-        "width": 1372,
-        "height": 1921
-      },
-      {
-        "url": "Paix_Team_Desktop.webp",
-        "alt": "Mockup Cabinet Dentaire de la Paix - Équipe",
-        "width": 1920,
-        "height": 1920
-      },
-      {
-        "url": "Paix_Treatments_Mobile.webp",
-        "alt": "Mockup iPhone Cabinet Dentaire de la Paix - Traitements",
-        "width": 1920,
-        "height": 1920
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "label": "Inari Strasbourg",
-    "href": "inari",
-    "cover": "inari-cover",
-    "description": "Site e-commerce développé sur WordPress avec WooCommerce et un thème sur mesure, pensé pour la performance et l’expérience utilisateur. Design soigné enrichi d’animations fluides avec GSAP et ScrollTrigger, et structure optimisée pour le SEO et la maintenabilité.",
-    "tag": "E-commerce",
-    "type": "Site web",
-    "technologies": "WordPress et Woocommerce",
-    "website": "https://www.inarimod.fr",
-    "images": [
-      {
-        "url": "Inari_Home_Desktop.webp",
-        "alt": "Mockup Inari - Accueil",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "url": "Inari_Home_Mobile.webp",
-        "alt": "Mockup iPhone Inari - Accueil",
-        "width": 1920,
-        "height": 1920
-      },
-      {
-        "url": "Inari_Home_Products_Desktop.webp",
-        "alt": "Mockup Inari - Produits",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "url": "Inari_Menu_Mobile.webp",
-        "alt": "Mockup Inari - Menu",
-        "width": 1280,
-        "height": 1920
-      },
-      {
-        "url": "Inari_Menu_Desktop.webp",
-        "alt": "Mockup Inari - Menu",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "url": "Inari_Product_Mobile.webp",
-        "alt": "Mockup iPhone Inari - Produit",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "url": "Inari_Products_Mobile.webp",
-        "alt": "Mockup iPhone Inari - Produits",
-        "width": 1536,
-        "height": 1921
       }
     ]
   },
