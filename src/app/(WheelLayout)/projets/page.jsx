@@ -2,7 +2,7 @@
 import ProjectsWrapper from "@/components/Project/ProjectsWrapper";
 import { useEffect } from "react";
 
-const Home = () => {
+const ProjectsPage = () => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -19,20 +19,8 @@ const Home = () => {
           <ProjectsWrapper />
         </div>
       </div>
-      <div className="sr-only">
-        <p>Compétences techniques :</p>
-        <ul>
-          <li>Frontend : React, Next.js, Redux, Svelte</li>
-          <li>Styling : Tailwind CSS, SCSS, Styled Components</li>
-          <li>
-            Backend/Base de données : Node.js, Express, MongoDB, PostgreSQL
-          </li>
-          <li>Langages : JavaScript (ES6+), TypeScript, HTML5, CSS3</li>
-          <li>Outils : Git, Vercel, Docker</li>
-        </ul>
-      </div>
     </>
   );
 };
 
-export default Home;
+export default ProjectsPage;

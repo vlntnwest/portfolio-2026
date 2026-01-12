@@ -17,7 +17,7 @@ const ProjectItem = ({ project, changeOnClick, index, selectedIndex }) => {
         className="w-full h-full"
       >
         <Link
-          href={project.images ? `/projects/${project.href}` : project.website}
+          href={project.images ? `/projets/${project.href}` : project.website}
           className="w-full h-full cursor-pointer flex items-center justify-center relative"
           aria-label={`Projet ${project.label}`}
           onClick={(e) => {

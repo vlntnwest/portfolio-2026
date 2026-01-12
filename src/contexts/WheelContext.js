@@ -175,12 +175,12 @@ export default function WheelProvider({ children }) {
   }, [name]);
 
   useEffect(() => {
-    if (pathname.includes("/projects/")) {
-      setMode("projects");
+    if (pathname.includes("/projets/")) {
+      setMode("single");
       // } else if (pathname.includes("/playground")) {
       //   setMode("initial");
     } else {
-      setMode("home");
+      setMode("projets");
     }
   }, [pathname]);
 

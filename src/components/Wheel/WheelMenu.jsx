@@ -23,7 +23,7 @@ const menuVariants = {
   },
 };
 
-const WheelMenu = () => {
+const WheelMenu = (isOpen = false) => {
   const { isMenuOpen } = useWheelContext();
   const shouldReduceMotion = useReducedMotion();
   const menuState = (() => {

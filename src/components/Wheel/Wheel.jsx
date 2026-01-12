@@ -19,7 +19,7 @@ import { usePathname } from "next/navigation";
 
 const wheelVariants = {
   initial: { opacity: 0, transition: { duration: 0 } },
-  home: {
+  projets: {
     width: "200px",
     height: "200px",
     borderRadius: "9999px",
@@ -27,7 +27,7 @@ const wheelVariants = {
     translateY: "0px",
     transition: { duration: 0.4, ease: "easeInOut" },
   },
-  projects: {
+  single: {
     width: "auto",
     height: "auto",
     transition: { duration: 0.4, ease: "easeInOut" },
@@ -67,15 +67,15 @@ const Wheel = () => {
   const { selectedIndex, emblaApi } = useCarouselContext();
   const pathname = usePathname();
 
-  const isHome = pathname === "/";
+  const isProjects = pathname === "/projets";
 
   const shouldReduceMotion = useReducedMotion();
 
   const prevHref = prevProject?.images
-    ? `/projects/${prevProject.href}`
+    ? `/projets/${prevProject.href}`
     : prevProject?.website;
   const nextHref = nextProject?.images
-    ? `/projects/${nextProject.href}`
+    ? `/projets/${nextProject.href}`
     : nextProject?.website;
 
   useEffect(() => {
@@ -89,12 +89,12 @@ const Wheel = () => {
   }, [emblaApi, dir]);
 
   useEffect(() => {
-    if (mode === "home") {
+    if (mode === "projets") {
       if (!projects[selectedIndex].images) {
         setProjectLink(projects[selectedIndex].website);
         return;
       }
-      setProjectLink(`/projects/${projects[selectedIndex].href}`);
+      setProjectLink(`/projets/${projects[selectedIndex].href}`);
     }
   }, [mode, selectedIndex, setProjectLink, pathname]);
 
@@ -102,7 +102,7 @@ const Wheel = () => {
 
   return (
     <motion.section
-      initial={isHome ? { y: 250 } : { y: 0 }}
+      initial={isProjects ? { y: 250 } : { y: 0 }}
       animate={{
         y: 0,
         transition: {
@@ -114,9 +114,9 @@ const Wheel = () => {
       }}
       className="fixed bottom-0 left-0 right-0 z-99999 flex items-center justify-center mb-4"
     >
-      {mode === "projects" && (
-        <IconMenu direction="right" name="projects">
-          <IconMenuInner name="projects" icon={albumIcon} menu={projectsList} />
+      {mode === "single" && (
+        <IconMenu direction="right" name="single">
+          <IconMenuInner name="single" icon={albumIcon} menu={projectsList} />
         </IconMenu>
       )}
       <motion.div
@@ -138,13 +138,13 @@ const Wheel = () => {
         onTouchEnd={reset}
         onTouchStart={onTouchStart}
       >
-        {mode === "home" && position.x !== 0 && position.y !== 0 && (
+        {mode === "projets" && position.x !== 0 && position.y !== 0 && (
           <WheelShadow position={position} />
         )}
         <motion.div
           variants={wheelContentVariants}
-          initial={mode === "home" ? "show" : "hide"}
-          animate={mode === "home" ? "show" : "hide"}
+          initial={mode === "projets" ? "show" : "hide"}
+          animate={mode === "projets" ? "show" : "hide"}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
           <WheelCentralButton />
@@ -156,12 +156,12 @@ const Wheel = () => {
         <motion.div
           variants={wheelContentVariants}
           initial="hide"
-          animate={mode === "projects" ? "show" : "hide"}
+          animate={mode === "single" ? "show" : "hide"}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
           <WheelProject
             style={
-              mode !== "projects"
+              mode !== "single"
                 ? {
                     opacity: 0,
                     appearance: "none",
@@ -180,7 +180,7 @@ const Wheel = () => {
           />
         </motion.div>
       </motion.div>
-      {mode === "projects" && (
+      {mode === "single" && (
         <IconMenu direction="left" name="menu">
           <IconMenuInner name="menu" icon={menuIcon} menu={menuList} />
         </IconMenu>
@@ -210,7 +210,7 @@ const projectsList = projects.map((project) => (
   <MenuLink
     key={project.id}
     name={project.label}
-    href={project?.images ? `/projects/${project.href}` : project.website}
+    href={project?.images ? `/projets/${project.href}` : project.website}
     target={project?.images ? "_self" : "_blank"}
     cover={project.cover}
     icon={true}
